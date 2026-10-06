@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 35px 70px;
+}
+
+.screen.active {
+    display: block;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #63d7ff;
+}
+
+.profile,
+.progress {
+    color: #9caec3;
+}
+
+.back {
+    background: transparent;
+    border: none;
+    color: #9caec3;
+}
+
+.hero {
+    max-width: 850px;
+    margin-top: 120px;
+}
+
+.eyebrow {
+    color: #63d7ff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: 65px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 42px;
+    margin-bottom: 35px;
+}
+
+.description {
+    color: #aebdce;
+    font-size: 21px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.primary {
+    background: #63d7ff;
+    border: none;
+    border-radius: 10px;
+    padding: 17px 28px;
+    color: #04101c;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+}
+
+.features {
+    display: flex;
+    gap: 25px;
+    margin-top: 100px;
+}
+
+.features div {
+    width: 260px;
+    padding: 22px;
+    border: 1px solid #23364d;
+    border-radius: 12px;
+    background: #0c1929;
+}
+
+.features strong,
+.features span {
+    display: block;
+}
+
+.features span {
+    margin-top: 8px;
+    color: #8ea1b6;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 90px auto 0;
+}
+
+.topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.topic {
+    text-align: left;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #243950;
+    background: #0c1929;
+    color: white;
+}
+
+.topic.selected {
+    border-color: #63d7ff;
+}
+
+.topic b,
+.topic span {
+    display: block;
+}
+
+.topic b {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.topic span {
+    color: #8fa2b7;
+}
+
+.ai-card {
+    background: #0c1929;
+    border: 1px solid #2b4058;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.ai-label {
+    color: #63d7ff;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.ai-card p {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #d6e0eb;
+}
+
+.lesson-points {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.lesson-points div {
+    flex: 1;
+    padding: 18px;
+    border-radius: 10px;
+    background: #0c1929;
+}
+
+.lesson-points strong {
+    display: block;
+    color: #63d7ff;
+    margin-bottom: 8px;
+}
+
+.lesson-points span {
+    color: #a8b8c9;
+}
+
+.answers {
+    display: grid;
+    gap: 14px;
+}
+
+.answers button {
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #30465e;
+    background: #0c1929;
+    color: white;
+}
+
+.answers button:hover {
+    border-color: #63d7ff;
+}
+
+#quizResult {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #63d7ff;
+}
+
+.progress-card {
+    background: #0c1929;
+    border: 1px solid #2b4058;
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 30px;
+}
+
+.score strong {
+    display: block;
+    font-size: 55px;
+}
+
+.score span {
+    color: #94a7bb;
+}
+
+.bar {
+    width: 100%;
+    height: 12px;
+    background: #203147;
+    border-radius: 20px;
+    margin: 30px 0;
+}
+
+.bar-fill {
+    width: 67%;
+    height: 100%;
+    background: #63d7ff;
+    border-radius: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 60px;
+}
+
+.stats b,
+.stats span {
+    display: block;
+}
+
+.stats b {
+    font-size: 25px;
+}
+
+.stats span {
+    color: #91a4b8;
+    margin-top: 5px;
+}
+
+@media (max-width: 800px) {
+
+    .screen {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .topics {
+        grid-template-columns: 1fr;
+    }
+
+    .features,
+    .lesson-points {
+        flex-direction: column;
+    }
+
+    .features div {
+        width: 100%;
+    }
+
+    .stats {
+        gap: 25px;
+    }
+}
