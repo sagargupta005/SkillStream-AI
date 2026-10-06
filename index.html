@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillStream AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HOME -->
+    <section id="home" class="screen active">
+        <div class="topbar">
+            <div class="logo">SkillStream <span>AI</span></div>
+            <div class="profile">Student</div>
+        </div>
+
+        <div class="hero">
+            <p class="eyebrow">LEARN SMARTER</p>
+            <h1>Turn your TV into<br>an interactive classroom.</h1>
+            <p class="description">
+                Learn new skills with AI-powered lessons, quizzes,
+                and personalized progress tracking.
+            </p>
+
+            <button class="primary" onclick="showScreen('topics')">
+                Start Learning →
+            </button>
+        </div>
+
+        <div class="features">
+            <div>
+                <strong>AI Lessons</strong>
+                <span>Personalized explanations</span>
+            </div>
+
+            <div>
+                <strong>Interactive Quizzes</strong>
+                <span>Test your knowledge</span>
+            </div>
+
+            <div>
+                <strong>Progress Tracking</strong>
+                <span>See your improvement</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TOPICS -->
+    <section id="topics" class="screen">
+
+        <div class="topbar">
+            <div class="logo">SkillStream <span>AI</span></div>
+            <button class="back" onclick="showScreen('home')">← Back</button>
+        </div>
+
+        <div class="content">
+            <p class="eyebrow">CHOOSE A TOPIC</p>
+            <h2>What do you want to learn?</h2>
+
+            <div class="topics">
+
+                <button class="topic selected"
+                        onclick="selectTopic('Python')">
+                    <b>Python</b>
+                    <span>Programming fundamentals</span>
+                </button>
+
+                <button class="topic"
+                        onclick="selectTopic('Java')">
+                    <b>Java</b>
+                    <span>Object-oriented programming</span>
+                </button>
+
+                <button class="topic"
+                        onclick="selectTopic('Mechanical Engineering')">
+                    <b>Mechanical Engineering</b>
+                    <span>Engineering concepts</span>
+                </button>
+
+                <button class="topic"
+                        onclick="selectTopic('Data Science')">
+                    <b>Data Science</b>
+                    <span>Data and AI fundamentals</span>
+                </button>
+
+            </div>
+
+            <button class="primary" onclick="startLesson()">
+                Start AI Lesson →
+            </button>
+        </div>
+    </section>
+
+
+    <!-- LESSON -->
+    <section id="lesson" class="screen">
+
+        <div class="topbar">
+            <div class="logo">SkillStream <span>AI</span></div>
+            <div class="progress">Lesson 1 of 3</div>
+        </div>
+
+        <div class="content lesson-content">
+
+            <p class="eyebrow">AI GENERATED LESSON</p>
+
+            <h2 id="lessonTitle">
+                Python Fundamentals
+            </h2>
+
+            <div class="ai-card">
+
+                <div class="ai-label">
+                    ✦ AI EXPLANATION
+                </div>
+
+                <p id="lessonText">
+                    Python is a high-level programming language known
+                    for its simple and readable syntax. It is widely
+                    used for automation, web development, data science,
+                    artificial intelligence, and many other applications.
+                </p>
+
+            </div>
+
+            <div class="lesson-points">
+
+                <div>
+                    <strong>01</strong>
+                    <span>Easy-to-read syntax</span>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <span>Large ecosystem of libraries</span>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <span>Popular in AI and data science</span>
+                </div>
+
+            </div>
+
+            <button class="primary" onclick="showScreen('quiz')">
+                Take Quick Quiz →
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="screen">
+
+        <div class="topbar">
+            <div class="logo">SkillStream <span>AI</span></div>
+            <div>Quiz 1 / 1</div>
+        </div>
+
+        <div class="content quiz-content">
+
+            <p class="eyebrow">KNOWLEDGE CHECK</p>
+
+            <h2>Which statement best describes Python?</h2>
+
+            <div class="answers">
+
+                <button onclick="answer(this, false)">
+                    A. A database management system
+                </button>
+
+                <button onclick="answer(this, true)">
+                    B. A high-level programming language
+                </button>
+
+                <button onclick="answer(this, false)">
+                    C. A computer operating system
+                </button>
+
+                <button onclick="answer(this, false)">
+                    D. A hardware design tool
+                </button>
+
+            </div>
+
+            <p id="quizResult"></p>
+
+        </div>
+    </section>
+
+
+    <!-- PROGRESS -->
+    <section id="progressScreen" class="screen">
+
+        <div class="topbar">
+            <div class="logo">SkillStream <span>AI</span></div>
+        </div>
+
+        <div class="content">
+
+            <p class="eyebrow">YOUR LEARNING PROGRESS</p>
+
+            <h2>You're making progress.</h2>
+
+            <div class="progress-card">
+
+                <div class="score">
+                    <strong>67%</strong>
+                    <span>Course Progress</span>
+                </div>
+
+                <div class="bar">
+                    <div class="bar-fill"></div>
+                </div>
+
+                <div class="stats">
+                    <div>
+                        <b>2</b>
+                        <span>Lessons</span>
+                    </div>
+
+                    <div>
+                        <b>1</b>
+                        <span>Quiz</span>
+                    </div>
+
+                    <div>
+                        <b>85%</b>
+                        <span>Accuracy</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="primary" onclick="showScreen('home')">
+                Back to Home
+            </button>
+
+        </div>
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
